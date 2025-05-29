@@ -1,6 +1,6 @@
-// --- Start of next.config (1).js ---
 /** @type {import('next').NextConfig} */
 const nextConfig = {
+  reactStrictMode: true,
   compiler: {
     styledComponents: true
   },
@@ -11,19 +11,7 @@ const nextConfig = {
         hostname: 'vod.api.video',
         port: '',
         pathname: '/my-account/**'
-      }
-    ]
-  }
-};
-
-module.exports = nextConfig;
-
-// --- End of next.config (1).js ---
-
-// --- Start of next.config (2).js ---
-module.exports = {
-  images: {
-    remotePatterns: [
+      },
       {
         protocol: 'https',
         hostname: 'res.cloudinary.com',
@@ -32,18 +20,7 @@ module.exports = {
         search: ''
       }
     ]
-  }
-};
-
-// --- End of next.config (2).js ---
-
-// --- Start of next.config.js ---
-/**
- * @type {import('next').NextConfig}
- */
-module.exports = {
-  swcMinify: true,
-  reactStrictMode: true,
+  },
   async rewrites() {
     return [
       {
@@ -55,4 +32,4 @@ module.exports = {
   }
 };
 
-// --- End of next.config.js ---
+module.exports = nextConfig;
