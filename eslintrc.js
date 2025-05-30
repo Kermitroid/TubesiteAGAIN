@@ -16,11 +16,18 @@ module.exports = {
     'next/core-web-vitals' // Next.js rules including React, performance, and accessibility
   ],
 
+  // Parser configuration for modern JavaScript
+  parser: '@babel/eslint-parser',
+  
   // Parser options control how ESLint interprets your code
   // These settings ensure ESLint can understand modern JavaScript and JSX syntax
   parserOptions: {
     ecmaVersion: 'latest', // Use the latest ECMAScript features
     sourceType: 'module', // Enable ES6 module syntax (import/export)
+    requireConfigFile: false, // Don't require a separate Babel config for ESLint
+    babelOptions: {
+      presets: ['@babel/preset-env', '@babel/preset-react']
+    },
     ecmaFeatures: {
       jsx: true // Enable JSX parsing for React components
     }
